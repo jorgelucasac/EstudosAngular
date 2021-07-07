@@ -1,0 +1,64 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Interpolation</h3>
+      <hr />
+      <p>o número de cliques é: {{contadorCliques}}</p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>Badges on Buttons</h3>
+      <hr />
+      <button type="button" [ngClass]="{
+        'btn btn-danger': contadorCliques <= 5,
+        'btn btn-warning': contadorCliques > 5 && contadorCliques <=10,
+        'btn btn-primary': contadorCliques > 10
+      }">Quantidade: <span class="badge">{{contadorCliques}}</span></button>
+
+    </div>
+    <div class="col-md-4">
+      <h3>Property Binding</h3>
+      <hr />
+      <button style="margin-right: 10px;" class="btn btn-primary" [disabled]="contadorCliques >= 10">info</button>
+      <img [src]="urlImage" width="50px" height="50px" alt="image">
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Event Binding</h4>
+      <hr />
+      <button style="margin-right: 10px;" class="btn btn-success" (click)='adicionarClique()'>Incrementar
+        cliques</button>
+      <button class="btn btn-danger" (click)='zerarContador()' [disabled]="contadorCliques < 10">
+        Zerar cliques
+      </button>
+    </div>
+    <div class="col-md-4">
+      <h4>Two-way Binding</h4>
+      <hr />
+      <input class="form-control" type="text" (keyup)='keyUp($event)' placeholder="digite seu nome">
+      <br> <br>
+      <label>Seu nome é: {{nome}}</label>
+    </div>
+    <!-- <div class="col-md-4">
+      <h4>Two-way Binding (ngModule)</h4>
+      <hr />
+      <input class="form-control" [ngModel]="nomeModule" (ngModelChange)='nomeModule=$event' type="text"
+        placeholder="digite seu nome">
+      <br> <br>
+      <label class="{{nomeModule}}">Seu nome é: {{nomeModule}}</label>
+    </div> -->
+
+    <div class="col-md-4">
+      <h4>Two-way Binding (ngModule)</h4>
+      <hr />
+      <input class="form-control" [(ngModel)]="nomeModule" type="text" placeholder="digite seu nome">
+      <br> <br>
+      <label [ngClass]="nomeModule">Seu nome é: {{nomeModule}}</label>
+    </div>
+  </div>
+
+</div>
