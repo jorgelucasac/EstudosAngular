@@ -16,6 +16,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
 import { ProdutoService } from './produtos/produtos.service';
 import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
+import { DetalhesProdutoComponent } from './produtos/detalhes-produto/detalhes-produto.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.co
     SobreComponent,
     ContatoComponent,
     DataBindingComponent,
-    ListaProdutoComponent
+    ListaProdutoComponent,
+    DetalhesProdutoComponent
   ],
   imports: [
     BrowserModule,

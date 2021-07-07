@@ -1,0 +1,25 @@
+<div class="container main-container">
+  <h4>Detalhes do produto</h4>
+  <hr />
+
+  <div class="row" *ngIf="produto != null">
+    <div class="col-md-5">
+      <img src="/assets/{{produto.imagem}}" alt="" style="width: 100%; height: 100%" />
+    </div>
+    <div class="col-md-5">
+      <dl>
+        <dt>
+          {{produto.nome}}
+        </dt>
+        <dd>
+          R$ {{produto.valor}}
+        </dd>
+
+      </dl>
+
+      <div>
+        <a class="btn btn-info" [routerLink]="['/produtos']" routerLinkActive="router-link-active">Voltar</a>
+      </div>
+    </div>
+  </div>
+</div>
