@@ -11,12 +11,26 @@
         </a>
         <div class="card-body">
           <h4 class="card-title">{{produto.nome | titlecase}}</h4>
-          <p>Por apenas:</p>
-          <div>
+
+          <div [ngSwitch]="produto.promocao">
+            <p *ngSwitchCase="true">Promoção!</p>
+            <p *ngSwitchCase="false">Por apenas:</p>
+          </div>
+
+          <div *ngIf="produto.promocao">
+            <div>
+              <h4 class="card-text">De:
+                <small><del>{{ produto.valor | currency }}</del></small>
+                Por: {{ produto.valorPromo | currency }}
+              </h4>
+            </div>
+          </div>
+
+          <div *ngIf="!produto.promocao">
             <!-- <h4>{{produto.valor | currency:"BRL":symbol:'1.2-2':'pt' }}</h4> -->
             <h4>{{produto.valor | currency }}</h4>
-
           </div>
+
         </div>
         <div class="card-footer">
           <a class="btn btn-primary" [routerLink]="['/carrinho',produto.id]" routerLinkActive="router-link-active">
