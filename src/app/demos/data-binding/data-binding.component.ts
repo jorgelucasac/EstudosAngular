@@ -10,6 +10,7 @@ export class DataBindingComponent {
   public urlImage: string = "https://angular.io/assets/images/logos/angular/angular.svg";
   public nome: string = "";
   public nomeModule: string = "";
+  public exemplo: string = "{{variavel}}";
 
   adicionarClique() {
     this.contadorCliques++;
